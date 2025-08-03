@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mourish Education</title>
+  <meta name="theme-color" content="#2196f3">
+  <style>
+    :root {
+      --primary: #0077b6;
+      --dark: #005f8b;
+      --hover: #003f5c;
+      --accent: #25D366;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    /* Entry animations */
+    .animate {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 20px;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      height: 60px;
+    }
+
+    .header-text h1 {
+      font-size: 36px;
+      margin: 0;
+    }
+
+    .header-text p {
+      font-size: 18px;
+      margin-top: 5px;
+    }
+
+    section {
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 28px;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      background: white;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-left: 5px solid var(--primary);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: 0.3s ease;
+    }
+
+    li:hover {
+      transform: scale(1.02);
+    }
+
+    .print-btn, .call-btn, .mail-btn, .whatsapp-btn, button[type="submit"] {
+      display: inline-block;
+      margin: 10px 10px 0 0;
+      padding: 12px 20px;
+      font-size: 16px;
+      text-decoration: none;
+      border-radius: 8px;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .print-btn { background-color: var(--primary); }
+    .call-btn { background-color: #28a745; }
+    .mail-btn { background-color: #007bff; }
+    .whatsapp-btn { background-color: var(--accent); }
+    button[type="submit"] { background-color: var(--primary); }
+
+    button:hover,
+    .call-btn:hover,
+    .mail-btn:hover,
+    .whatsapp-btn:hover,
+    .print-btn:hover {
+      background-color: var(--hover);
+    }
+
+    form {
+      margin-top: 25px;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    /* Bottom Menu */
+    .bottom-menu-static {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      background: var(--primary);
+      padding: 15px;
+    }
+
+    .bottom-menu-static a {
+      background: var(--dark);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .bottom-menu-static a:hover {
+      background-color: var(--hover);
+    }
+
+    @media (max-width: 768px) {
+      .header-text h1 {
+        font-size: 26px;
+      }
+
+      .logo {
+        height: 50px;
+      }
+
+      .call-btn, .whatsapp-btn, .print-btn, .mail-btn, button[type="submit"] {
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .bottom-menu-static {
+        flex-direction: column;
+      }
+
+      .bottom-menu-static a {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    @media print {
+      body * { visibility: hidden; }
+      #fee-print, #fee-print * { visibility: visible; }
+      #fee-print { position: absolute; top: 0; left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-container">
+      <img src="file_0000000005fc61f7b49897d2d52c9ef0 (1).png" alt="Mourish Logo" class="logo">
+      <div class="header-text">
+        <h1>Mourish Education</h1>
+        <p>Empowering Education, Inspiring Futures</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="about container animate" id="about">
+    <h2>About Us</h2>
+    <p>Mourish Education is committed to delivering high-quality education for all learners. We offer a variety of programs to help students succeed academically and professionally.</p>
+  </section>
+
+  <section class="courses container animate" id="courses">
+    <h2>Our Courses</h2>
+    <ul>
+      <li>📚 Online Tutoring (6th to 12th Grade)</li>
+      <li>💻 App & Website Development</li>
+      <li>👨‍💻 Computer Basics & Coding for Kids</li>
+    </ul>
+  </section>
+
+  <section class="fees container animate" id="fee-print">
+    <h2>Fee Details</h2>
+    <ul>
+      <li>👨‍🏫 Demo Class: <strong>1 Day – Free</strong></li>
+      <li>📅 Monthly Fee: <strong>₹250</strong></li>
+      <li>📆 Yearly Fee: <strong>₹3,000</strong></li>
+    </ul>
+  </section>
+
+  <section class="container animate">
+    <button onclick="window.print()" class="print-btn">📄 Download Fee Details (PDF)</button>
+  </section>
+
+  <section class="contact container animate" id="contact">
+    <h2>Contact Us</h2>
+    <p>Call, mail or chat with us directly:</p>
+    <a href="mailto:mourisheducation@gmail.com" class="mail-btn" target="_blank">📧 Mail Us</a>
+    <p>mourisheducation@gmail.com</p>
+    <a href="tel:+919659233313" class="call-btn">📞 Call Us</a>
+    <p>+919659233313</p>
+    <a href="https://wa.me/916374037002" class="whatsapp-btn" target="_blank">💬 Chat on WhatsApp</a>
+    <p>+919659233313</p>
+    <p><strong>Address: </strong>Ramana Shree Garden,<br>Vasantha Villa Apartment<br>B4 Block<br>Madurai 625 011.</p>
+
+    <form action="mailto:mourisheducation@gmail.com" method="post" enctype="text/plain">
+      <h2>Send us a Message</h2>
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Email</button>
+    </form>
+  </section>
+
+  <div class="bottom-menu-static">
+    <a href="#about">About</a>
+    <a href="#courses">Courses</a>
+    <a href="#fee-print">Fees</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <footer>
+    Mourish Education. All rights reserved.
+  </footer>
+
+</body>
+</html>

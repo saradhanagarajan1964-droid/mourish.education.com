@@ -10,264 +10,148 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      scroll-behavior: smooth;
     }
+
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #f5f5f5, #e0e0e0);
-      color: #222;
+      background-color: #f5faff;
+      color: #000;
+      line-height: 1.6;
     }
+
     header {
-      background: #1E90FF;
+      background-color: #1E90FF;
       color: #fff;
-      padding: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      padding: 1.5rem;
+      text-align: center;
     }
+
     header h1 {
-      font-size: 1.5rem;
-      animation: slideInLeft 1s ease-out;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
     }
-    .menu-btn {
-      width: 30px;
-      height: 25px;
-      cursor: pointer;
-      position: relative;
-      transition: 0.3s;
+
+    header p {
+      font-size: 1rem;
+      margin-top: 0.3rem;
     }
-    .menu-btn span {
-      display: block;
-      height: 4px;
-      background: #fff;
-      margin: 5px 0;
-      transition: all 0.4s;
-    }
-    .menu.show + .menu-btn span:nth-child(1) {
-      transform: rotate(45deg) translateY(10px);
-    }
-    .menu.show + .menu-btn span:nth-child(2) {
-      opacity: 0;
-    }
-    .menu.show + .menu-btn span:nth-child(3) {
-      transform: rotate(-45deg) translateY(-10px);
-    }
-    .menu {
-      background: #111;
-      color: #fff;
-      display: none;
-      flex-direction: column;
-      gap: 1rem;
-      padding: 1rem;
-    }
-    .menu a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    .menu a:hover {
-      color: #ffc107;
-    }
-    .menu.show {
+
+    nav {
       display: flex;
-      animation: slideDown 0.3s ease-in-out;
+      justify-content: center;
+      flex-wrap: wrap;
+      background-color: #1565C0;
     }
-    @keyframes slideDown {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
+
+    nav a {
+      color: white;
+      padding: 1rem 1.5rem;
+      text-decoration: none;
+      display: block;
+      transition: background 0.3s;
     }
-    @keyframes slideInLeft {
-      from { transform: translateX(-100px); opacity: 0; }
-      to { transform: translateX(0); opacity: 1; }
-    }
-    @keyframes fadeInUp {
-      from { transform: translateY(20px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+
+    nav a:hover {
+      background-color: #0d47a1;
     }
 
     section {
-      padding: 2rem;
-      animation: fadeInUp 1s ease forwards;
+      padding: 2rem 1rem;
+      max-width: 960px;
+      margin: auto;
+      text-align: center;
     }
 
-    section h2 {
+    h2 {
+      color: #1565C0;
+      font-size: 1.8rem;
       margin-bottom: 1rem;
     }
 
-    form {
-      background: #fff;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      max-width: 500px;
-      margin: 1rem auto;
-      animation: fadeInUp 1s ease forwards;
-    }
-    form input, form select, form button {
-      width: 100%;
-      padding: 0.9rem;
-      margin: 0.7rem 0;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      transition: border-color 0.3s ease;
-    }
-    form input:focus, form select:focus {
-      border-color: #000;
-    }
-    form button {
-      background: #000;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-    form button:hover {
-      background: #333;
-    }
-
-    .contact-btns a {
-      display: inline-block;
-      margin: 0.5rem;
-      padding: 0.6rem 1.2rem;
-      background: #000;
-      color: #fff;
-      border-radius: 5px;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-    .contact-btns a:hover {
-      background: #333;
-    }
-    .address {
-      margin-top: 1rem;
-      font-style: italic;
+    address {
+      background-color: #f0f8ff;
+      padding: 1rem;
+      border-left: 4px solid #1E90FF;
+      margin-top: 2rem;
+      font-style: normal;
+      text-align: center;
     }
 
     @media (max-width: 768px) {
-      header {
+      nav {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
       }
+
       header h1 {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
       }
-      section {
-        padding: 1rem;
+
+      h2 {
+        font-size: 1.4rem;
       }
-      .menu-btn {
-        align-self: flex-end;
-      }
-    h2{
-    text-align: center;
-    }
-      h1{
-      text-align: center;
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Mourish Education</h1>
-    <div class="menu-btn" onclick="toggleMenu(this)">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+    <p>Empowering Future Minds</p>
   </header>
 
-  <nav class="menu" id="menu">
+  <nav>
     <a href="#about">About</a>
     <a href="#fee">Fee</a>
     <a href="#contact">Contact</a>
     <a href="#register">Register</a>
   </nav>
 
-  <section id="home">
-    <h2>Welcome to Mourish Education</h2>
-    <p>Learn coding, web, and app development from scratch. Tailored for Grades 1 to 12.</p>
-  </section>
-
   <section id="about">
     <h2>About Us</h2>
-    <p>Mourish Education provides hands-on training in block-based coding, website design, and app development for students from Grade 1 to 12.</p>
+    <p>Mourish Education offers courses in Block-Based Coding, Website Development, and App Development for students from Grade 1 to 12. Our mission is to inspire creativity and innovation in young minds.</p>
   </section>
 
   <section id="fee">
     <h2>Fee Structure</h2>
-    <ul>
-      <li>Demo: Free</li>
-      <li>1 Month: ₹100</li>
-      <li>3 Months: ₹300</li>
-      <li>1 Year: ₹1200</li>
-    </ul>
+    <p>We offer affordable, flexible packages for each course. Contact us for full details based on the grade and course selected.</p>
   </section>
 
   <section id="contact">
     <h2>Contact Us</h2>
-    <div class="contact-btns">
-      <a href="mailto:mourisheducation@gmail.com">Email</a>
-      <a href="https://wa.me/919876543210">WhatsApp</a>
-      <a href="tel:+919876543210">Call Us</a>
-    </div>
-    <div class="address">
-      <strong>Address:</strong> Ramana Shree Garden,<br>Vasanta Villa Aparment,<br>B4- Block Madurai,<br> Tamil Nadu,<br> India
-    </div>
+    <p>Email: mourishedu@example.com<br>
+       Phone: +91 63740 37002</p>
+    <address>
+      Ramana Shree Garden,<br>
+      Vasanta Villa Apartment, B4 Block,<br>
+      Madurai 625 011.
+    </address>
   </section>
 
   <section id="register">
     <h2>Student Registration</h2>
-    <form onsubmit="return sendEmail()">
-      <input type="text" id="name" placeholder="Full Name" required>
-      <input type="email" id="email" placeholder="Email Address" required>
-      <input type="tel" id="phone" placeholder="Phone Number" required>
-      <input list="grades" id="grade" placeholder="Grade (1–12)" required>
+    <form>
+      <input type="text" placeholder="Full Name" required><br>
+      <input type="email" placeholder="Email" required><br>
+      <input type="tel" placeholder="Phone Number" required><br>
+      <input list="grades" name="grade" placeholder="Select Grade" required>
       <datalist id="grades">
-        <option value="1"><option value="2"><option value="3">
-        <option value="4"><option value="5"><option value="6">
-        <option value="7"><option value="8"><option value="9">
-        <option value="10"><option value="11"><option value="12">
-      </datalist>
-      <input list="courses" id="course" placeholder="Choose Course" required>
+        <option value="Grade 1"><option value="Grade 2"><option value="Grade 3">
+        <option value="Grade 4"><option value="Grade 5"><option value="Grade 6">
+        <option value="Grade 7"><option value="Grade 8"><option value="Grade 9">
+        <option value="Grade 10"><option value="Grade 11"><option value="Grade 12">
+      </datalist><br>
+
+      <input list="courses" name="course" placeholder="Select Course" required>
       <datalist id="courses">
-        <option value="Block Based Coding">
+        <option value="Block-Based Coding">
         <option value="Website Development">
         <option value="App Development">
-      </datalist>
-      <select id="feeplan" required>
-        <option value="">Select Fee Plan</option>
-        <option value="Demo">Demo</option>
-        <option value="1 Month - ₹100">1 Month - ₹100</option>
-        <option value="3 Months - ₹300">3 Months - ₹300</option>
-        <option value="1 Year - ₹1200">1 Year - ₹1200</option>
-      </select>
-      <button type="submit">Submit</button>
+      </datalist><br>
+
+      <button type="submit">Register</button>
     </form>
   </section>
 
-  <script>
-    function toggleMenu(btn) {
-      const menu = document.getElementById('menu');
-      menu.classList.toggle('show');
-    }
-
-    function sendEmail() {
-      const name = document.getElementById('name').value;
-      const grade = document.getElementById('grade').value;
-      const course = document.getElementById('course').value;
-      const fee = document.getElementById('feeplan').value;
-      const phone = document.getElementById('phone').value;
-      const email = document.getElementById('email').value;
-
-      const subject = `Registration from ${name}`;
-      const body = `Name: ${name}%0AEmail: ${email}%0APhone: ${phone}%0AGrade: ${grade}%0ACourse: ${course}%0AFee Plan: ${fee}`;
-      window.location.href = `mailto:mourisheducation@gmail.com?subject=${subject}&body=${body}`;
-      return false;
-    }
-  </script>
 </body>
 </html>

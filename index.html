@@ -4,154 +4,174 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mourish Education</title>
-  <meta name="theme-color" content="#1E90FF">
+  <meta name="theme-color" content="#007BFF">
   <style>
+    :root {
+      --primary: #007BFF;
+      --bg: #f0f0f0;
+      --text: #333;
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
     }
 
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f5faff;
-      color: #000;
-      line-height: 1.6;
+      background: var(--bg);
+      color: var(--text);
     }
 
     header {
-      background-color: #1E90FF;
-      color: #fff;
-      padding: 1.5rem;
+      background: var(--primary);
+      color: white;
+      padding: 1rem;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
-    header h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    header p {
-      font-size: 1rem;
-      margin-top: 0.3rem;
+    h1, h2 {
+      text-align: center;
+      margin: 1rem 0;
     }
 
     nav {
+      background: var(--primary);
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      background-color: #1565C0;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 1rem;
     }
 
-    nav a {
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-links a {
       color: white;
-      padding: 1rem 1.5rem;
       text-decoration: none;
-      display: block;
-      transition: background 0.3s;
+      font-weight: bold;
     }
 
-    nav a:hover {
-      background-color: #0d47a1;
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
     }
 
-    section {
-      padding: 2rem 1rem;
-      max-width: 960px;
-      margin: auto;
+    .hamburger span {
+      height: 3px;
+      background: white;
+      margin: 4px 0;
+      width: 25px;
+    }
+
+    .content {
+      padding: 2rem;
+    }
+
+    .meta {
       text-align: center;
-    }
-
-    h2 {
-      color: #1565C0;
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-    }
-
-    address {
-      background-color: #f0f8ff;
+      background: var(--primary);
+      color: white;
       padding: 1rem;
-      border-left: 4px solid #1E90FF;
-      margin-top: 2rem;
-      font-style: normal;
+    }
+
+    .input-group {
+      margin: 1rem auto;
       text-align: center;
+    }
+
+    input, button {
+      padding: 0.6rem;
+      margin: 0.5rem;
+      width: 90%;
+      max-width: 400px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
     }
 
     @media (max-width: 768px) {
-      nav {
+      .nav-links {
+        display: none;
         flex-direction: column;
-        align-items: center;
+        background: var(--primary);
+        width: 100%;
       }
 
-      header h1 {
-        font-size: 1.5rem;
+      .nav-links.show {
+        display: flex;
       }
 
-      h2 {
-        font-size: 1.4rem;
+      .hamburger {
+        display: flex;
       }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Mourish Education</h1>
-    <p>Empowering Future Minds</p>
-  </header>
-
   <nav>
-    <a href="#about">About</a>
-    <a href="#fee">Fee</a>
-    <a href="#contact">Contact</a>
-    <a href="#register">Register</a>
+    <div style="color:white; font-weight: bold;">Mourish Education</div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#fee">Fee</a>
+      <a href="#contact">Contact</a>
+    </div>
   </nav>
 
-  <section id="about">
-    <h2>About Us</h2>
-    <p>Mourish Education offers courses in Block-Based Coding, Website Development, and App Development for students from Grade 1 to 12. Our mission is to inspire creativity and innovation in young minds.</p>
-  </section>
+  <header>
+    <h1>Mourish Education</h1>
+    <h2>Empowering Future Innovators</h2>
+  </header>
 
-  <section id="fee">
-    <h2>Fee Structure</h2>
-    <p>We offer affordable, flexible packages for each course. Contact us for full details based on the grade and course selected.</p>
-  </section>
+  <div class="content" id="about">
+    <h2>About</h2>
+    <p>We provide modern courses in Block-based Coding, Website Development, and App Development.</p>
+  </div>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: mourishedu@example.com<br>
-       Phone: +91 63740 37002</p>
-    <address>
-      Ramana Shree Garden,<br>
-      Vasanta Villa Apartment, B4 Block,<br>
-      Madurai 625 011.
-    </address>
-  </section>
+  <div class="content" id="fee">
+    <h2>Fee</h2>
+    <p>Affordable and structured fee for each course. Please contact us for detailed information.</p>
+  </div>
 
-  <section id="register">
-    <h2>Student Registration</h2>
-    <form>
-      <input type="text" placeholder="Full Name" required><br>
-      <input type="email" placeholder="Email" required><br>
-      <input type="tel" placeholder="Phone Number" required><br>
-      <input list="grades" name="grade" placeholder="Select Grade" required>
-      <datalist id="grades">
-        <option value="Grade 1"><option value="Grade 2"><option value="Grade 3">
-        <option value="Grade 4"><option value="Grade 5"><option value="Grade 6">
-        <option value="Grade 7"><option value="Grade 8"><option value="Grade 9">
-        <option value="Grade 10"><option value="Grade 11"><option value="Grade 12">
-      </datalist><br>
+  <div class="content" id="contact">
+    <h2>Contact</h2>
+    <div class="input-group">
+      <p>phone: +91 9659233313/+91 63740 37002</p>
+      <p>email: mourisheducation@gmail.com</p>
+    </div>
+  </div>
 
-      <input list="courses" name="course" placeholder="Select Course" required>
-      <datalist id="courses">
-        <option value="Block-Based Coding">
-        <option value="Website Development">
-        <option value="App Development">
-      </datalist><br>
+  <div class="meta">
+    <p>Ramana Shree Garden, Vasanta Villa Apartment, B4 Block,<br>Madurai 625 011.</p>
+  </div>
 
-      <button type="submit">Register</button>
-    </form>
-  </section>
-
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navLinks');
+      nav.classList.toggle('show');
+    }
+  </script>
 </body>
 </html>
